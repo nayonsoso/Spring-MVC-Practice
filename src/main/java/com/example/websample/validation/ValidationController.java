@@ -1,5 +1,6 @@
 package com.example.websample.validation;
 
+import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -13,7 +14,8 @@ import javax.validation.Valid;
 @RestController
 public class ValidationController {
     @PostMapping("/valid")
-    public ValidationDto check(@RequestBody @Valid ValidationDto validationDto){
+    public ValidationDto check(@RequestBody @Valid Request request){
+        ValidationDto validationDto = (ValidationDto) request.getAttribute("validationDto");
         return validationDto;
     }
 
