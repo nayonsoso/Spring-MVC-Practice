@@ -34,7 +34,7 @@ public class SampleController {
 
     @GetMapping(value = "/order")
     public String getOrderWithRequestPram(@RequestParam("orderId") String id,
-                                          @RequestParam("orderAmount") String amount) {
+          @RequestParam(name="orderAmount", required=false, defaultValue = "1000") String amount) {
         log.info("Get same order : " + id);
         return "orderId:" + id + ", orderAmount:" + amount;
     }

@@ -1,5 +1,6 @@
 package com.example.websample.validation;
 
+import com.example.websample.dto.ErrorResponse;
 import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,10 @@ public class ValidationController {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Object handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         System.out.println(e.getMessage());
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .header("newHeader", "Some Value")
+                .body(new ErrorResponse("INVALID_ACCESS",
+                        "IllegalAccessException is occured."));
+                // cf. ErrorResponse는 커스텀 에러 객체
     }
 }
