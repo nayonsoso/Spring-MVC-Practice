@@ -135,7 +135,7 @@ public class GlobalExceptionHandler {
 
 ---
 
-### Validation
+### 📌 Validation
 
 먼저 gradle에 dependency를 추가해야 함
 
