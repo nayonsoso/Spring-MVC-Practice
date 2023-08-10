@@ -38,11 +38,11 @@ public class WebSampleApplication {
   - BE/FE가 분리된 요즘은 거의 RestController을 사용함``
 
 > **@PathVariable, @RequestParam 어노테이션**
-  - `@PathVariable`은 경로를 변수처럼 사용하여 URL로 값을 넘겨주는 것
+  - `@PathVariable`은 <U>경로를 변수처럼 사용</U>하여 URL로 값을 넘겨주는 것
     - /order/1 형식의 URL에 매핑됨
     - `@GetMapping("order/{id}")`가 선언된 함수에서 `@PathVariable("id")`로 값을 가져올 수 있음 
     -  GetMapping의 중괄호 안의 변수명과 @Pathvariable 소괄호의 값이 같으면 소괄호 생략 가능
-  - `@RequestParam`은 경로에 쿼리문을 넣어 URL로 값을 넘겨주는 것
+  - `@RequestParam`은 <U>경로에 쿼리문을 넣어</U> URL로 값을 넘겨주는 것
     - e.g /order?orderId=1 형식의 URL에 매핑됨
     - `@GetMapping("order")`가 선언된 함수에서 `@RequestParam("orderId")`로 값을 가져올 수 있음
     - 이때 PathVariable과 달리 Mapping 어노테이션에는 별다른 표시가 없다는 것 헷갈림 주의!
