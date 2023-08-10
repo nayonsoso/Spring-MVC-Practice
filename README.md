@@ -69,9 +69,10 @@ public class SampleController {
 ```
 
 > **@RequestHeader, @RequestBody 어노테이션**
-  - HTTP의 헤더, 바디로부터 직접 값을 받는 방법
-  - HTTP의 헤더나 바디에 있는 값을 객체로 자동 매핑해줌
-  - 어노테이션을 생략해도 자동으로 매핑해주긴 하나, 명시하는게 좋음
+- Post, Put, Patch 방식에서 주로 사용
+- HTTP의 헤더, 바디로부터 직접 값을 받는 방법
+- HTTP의 헤더나 바디에 있는 값을 객체로 자동 매핑해줌
+- 어노테이션을 생략해도 자동으로 매핑해주긴 하나, 명시하는게 좋음
 
 ```java
 @RestController // 응답으로 json을 리턴
