@@ -32,12 +32,12 @@ public class WebSampleApplication {
 
 ### 📌 Controller
 
->**Controller/RestController의 차이**
+>💡 **Controller/RestController의 차이**
   - Controller : 응답값이 기본적으로 **HTML**을 주도록 되어 있음 
   - RestController : 응답값으로 Rest API 요청에 대한 응답(= **JSON**)을 주도록 되어 있음 
   - BE/FE가 분리된 요즘은 거의 RestController을 사용함``
 
-> **@PathVariable, @RequestParam 어노테이션**
+>💡 **@PathVariable, @RequestParam 어노테이션**
   - `@PathVariable`은 <U>경로를 변수처럼 사용</U>하여 URL로 값을 넘겨주는 것
     - /order/1 형식의 URL에 매핑됨
     - `@GetMapping("order/{id}")`가 선언된 함수에서 `@PathVariable("id")`로 값을 가져올 수 있음 
@@ -68,7 +68,7 @@ public class SampleController {
 }
 ```
 
-> **@RequestHeader, @RequestBody 어노테이션**
+> 💡**@RequestHeader, @RequestBody 어노테이션**
 - Post, Put, Patch 방식에서 주로 사용
 - HTTP의 헤더, 바디로부터 직접 값을 받는 방법
 - HTTP의 헤더나 바디에 있는 값을 객체로 자동 매핑해줌
@@ -99,7 +99,7 @@ userAccountId: account888
 
 ### 📌 Exception
 
-> **ExceptionHandler**
+>💡**ExceptionHandler**
 - 컨트롤러 기반 예외 처리 방법
 - 컨트롤러 안에서`@ExceptionHandler(예외.class)` 어노테이션을 쓴 함수로 컨트롤러 기반 예외 처리를 할 수 있음
 - HTTP Status code를 변경하는 방법 
@@ -111,7 +111,7 @@ userAccountId: account888
     - 일반적으로 커스텀 에러 dto를 만들어서, 거기에 errorCode, errorMessage를 담게 함
     - errorCode는 보통 Enum으로 만들어 관리
 
-> **RestControllerAdvice**
+>💡**RestControllerAdvice**
 - 전역 예외 일괄 처리 방식
 - GlobalExceptionHandler.class에 `@RestControllerAdvice`를 씀으로써 어플리케이션에서 발생하는 모든 예외를 처리할 수 있음
   - cf. 보통 전역 예외처리GlobalExceptionHandler 클래스의 이름을 'GlobalExceptionHandler'이라고 짓는다.
