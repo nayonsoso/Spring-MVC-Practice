@@ -68,7 +68,7 @@ public class SampleController {
 }
 ```
 
-> 💡**@RequestHeader, @RequestBody 어노테이션**
+> 💡 **@RequestHeader, @RequestBody 어노테이션**
 - Post, Put, Patch 방식에서 주로 사용
 - HTTP의 헤더, 바디로부터 직접 값을 받는 방법
 - HTTP의 헤더나 바디에 있는 값을 객체로 자동 매핑해줌
